@@ -13,6 +13,8 @@ class CompanyFactory extends Factory
 
         return [
             'name' => $this->faker->unique()->company(),
+            'email' => $this->faker->unique()->safeEmail(),
+            'phone' => $this->faker->unique()->phoneNumber(),
             'description' => $this->faker->sentence(10, true),
             'city_id' => City::whereName($city)->firstOr(
                 fn () => City::factory()->state(['name' => $city])
