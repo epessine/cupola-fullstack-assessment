@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CompanyRequest;
 use App\Http\Resources\CompanyResource;
 use App\Models\Company;
 use Illuminate\Database\Eloquent\Builder;
-use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
 class CompanyController extends Controller
 {
-    public function index(Request $request): ResourceCollection
+    public function index(CompanyRequest $request): ResourceCollection
     {
         $stateId = $request->get('state_id');
         $cityId = $request->get('city_id');

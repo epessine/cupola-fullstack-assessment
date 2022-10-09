@@ -22,8 +22,8 @@ async function loadCompanies() {
     companies.value = await api.companies.index({
         limit: limit.value,
         search: search.value,
-        state_id: stateId.value,
-        city_id: cityId.value,
+        state_id: stateId.value ? stateId.value : null,
+        city_id: cityId.value ? cityId.value : null,
     });
 }
 
@@ -32,7 +32,9 @@ async function loadStates() {
 }
 
 async function loadCities() {
-    cities.value = await api.cities.index({ state_id: stateId.value });
+    cities.value = await api.cities.index({
+        state_id: stateId.value ? stateId.value : null,
+    });
 }
 
 onMounted(() => {
