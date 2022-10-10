@@ -21,7 +21,6 @@ class CompanyResource extends JsonResource
             'phone' => $this->phone,
             'formatted_phone' => Str::slug($this->phone, ''),
             'city' => CityResource::make($this->city),
-            'state' => StateResource::make($this->city->state),
         ];
     }
 }
