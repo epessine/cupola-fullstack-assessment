@@ -35,7 +35,7 @@ docker run --rm \
 Run Laravel Sail:
 
 ```sh
-./vendor/bin/sail up
+./vendor/bin/sail up -d
 ```
 
 Install NPM dependencies:
